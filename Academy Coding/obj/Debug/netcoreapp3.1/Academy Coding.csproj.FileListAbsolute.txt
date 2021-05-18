@@ -1,0 +1,15 @@
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.exe
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.deps.json
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.runtimeconfig.json
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.runtimeconfig.dev.json
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.pdb
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.csprojAssemblyReference.cache
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy_Coding.Form1.resources
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.csproj.GenerateResource.cache
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.AssemblyInfoInputs.cache
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.AssemblyInfo.cs
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.csproj.CoreCompileInputs.cache
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.pdb
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.genruntimeconfig.cache
