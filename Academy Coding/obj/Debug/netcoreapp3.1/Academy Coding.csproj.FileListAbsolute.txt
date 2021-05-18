@@ -13,3 +13,10 @@ C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.dll
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.pdb
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.genruntimeconfig.cache
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.csproj.CopyComplete
