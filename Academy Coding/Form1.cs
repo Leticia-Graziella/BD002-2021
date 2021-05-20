@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace Academy_Coding
@@ -90,10 +91,10 @@ namespace Academy_Coding
             string tabela = txt_tabelaSource.Text;
 
 
-
+             Conexao conexaosource = new Conexao();
             if (cb_autentificacaoSource.Checked)
             {
-                Conexao conexaosource = new Conexao();
+               
 
 
                 conexaosource.Connection(servidor,  dataBase);
@@ -101,15 +102,25 @@ namespace Academy_Coding
             }
             else {
 
-                Conexao conexaosource = new Conexao();
-
-
                 conexaosource.Connection(servidor, dataBase,usuario,senha);               
             }
-            
-            MessageBox.Show("Começou") ;
 
-            MessageBox.Show("DtaBase\n" +dataBase + "\nTabela\n"+tabela );
+            conexaosource.SqlConnection.Open();
+
+               String consulta = "select * from "+ tabela;
+
+            SqlCommand sqlCommand = new SqlCommand(consulta, conexaosource.SqlConnection);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(reader);
+
+            string informacao = " ";
+            foreach (DataRow r in data.Rows)
+            {
+                informacao += r[1].ToString();
+            }
+            MessageBox.Show(informacao);
+
 
 
         }
@@ -117,7 +128,6 @@ namespace Academy_Coding
                    
     }
 
-       
 
         
 

@@ -10,29 +10,33 @@ namespace Academy_Coding
 {
     class Conexao
     {
+        public SqlConnection SqlConnection;
+        public string connectionString;
         public Conexao() { }
-        public SqlConnection Connection(string servidor, string dataBase)
+
+        public void Connection(string servidor, string dataBase)
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder["server"] = servidor;
-            builder["Truested_Connection"] = true;     
+            builder["trusted_connection"] = true;     
             builder["Initial Catalog"] = dataBase;
     
-            var conn = new SqlConnection(builder.ConnectionString);
-            return conn;
+            this.SqlConnection = new SqlConnection(builder.ConnectionString);
+            this.connectionString = builder.ConnectionString;
+            
          }
-        public SqlConnection Connection(string servidor, string dataBase, string senha, string usuario)
+        public void Connection(string servidor, string dataBase, string senha, string usuario)
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder["server"] = servidor;
-            builder["Truested_Connection"] = false;
+            builder["trusted_connection"] = false;
             builder["Initial Catalog"] = dataBase;
             builder["User id"] = usuario;
             builder["password"] = senha;
-
-            var conn = new SqlConnection(builder.ConnectionString);
-            return conn;
-
+            
+            this.SqlConnection = new SqlConnection(builder.ConnectionString);
+            this.connectionString = builder.ConnectionString;
+            
           
            
         }
