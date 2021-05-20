@@ -20,3 +20,5 @@ C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.csproj.CopyComplete
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\EntityFramework.dll

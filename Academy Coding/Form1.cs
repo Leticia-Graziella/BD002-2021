@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -76,12 +77,44 @@ namespace Academy_Coding
 
 
         }
-
+       
         private void btn_start_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Começou" + txt_tabelaSource.Text);
+            string servidor = txt_servidorSource.Text;
+                
+            string dataBase = txt_dataBaseSouce.Text;
+
+            string usuario = txt_usuarioSource.Text;
+            string senha = txt_senhaSource.Text;
+
+            string tabela = txt_tabelaSource.Text;
+
+
+
+            if (cb_autentificacaoSource.Checked)
+            {
+                Conexao conexaosource = new Conexao();
+
+
+                conexaosource.Connection(servidor,  dataBase);
+                
+            }
+            else {
+
+                Conexao conexaosource = new Conexao();
+
+
+                conexaosource.Connection(servidor, dataBase,usuario,senha);               
+            }
             
+            MessageBox.Show("Começou") ;
+
+            MessageBox.Show("DtaBase\n" +dataBase + "\nTabela\n"+tabela );
+
+
         }
+            
+                   
     }
 
        

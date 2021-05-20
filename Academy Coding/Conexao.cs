@@ -32,6 +32,9 @@ namespace Academy_Coding
 
             var conn = new SqlConnection(builder.ConnectionString);
             return conn;
+
+          
+           
         }
 
     }
