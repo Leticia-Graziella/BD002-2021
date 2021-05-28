@@ -90,7 +90,7 @@ namespace Academy_Coding
 
             string tabela = txt_tabelaSource.Text;
 
-
+            Conexao conexaoTarget = new Conexao();
              Conexao conexaosource = new Conexao();
             if (cb_autentificacaoSource.Checked)
             {
@@ -102,24 +102,55 @@ namespace Academy_Coding
             }
             else {
 
-                conexaosource.Connection(servidor, dataBase,usuario,senha);               
+                conexaosource.Connection(servidor, dataBase,usuario,senha);
+            }
+            if (cb_autentificacaoTarget.Checked)
+            {
+
+
+
+                conexaoTarget.Connection(txt_servidorTarget.Text , txt_dataBaseTarget.Text);
+
+            }
+            else
+            {
+
+                conexaoTarget.Connection(txt_servidorTarget.Text, txt_dataBaseTarget.Text, txt_usuarioTarget.Text, txt_senhaTarget.Text);
             }
 
             conexaosource.SqlConnection.Open();
+            //conexaoTarget.SqlConnection.Open();
 
-               String consulta = "select * from "+ tabela;
+            String consulta = "select * from "+ tabela;
 
             SqlCommand sqlCommand = new SqlCommand(consulta, conexaosource.SqlConnection);
             SqlDataReader reader = sqlCommand.ExecuteReader();
             DataTable data = new DataTable();
             data.Load(reader);
 
-            string informacao = " ";
-            foreach (DataRow r in data.Rows)
+            string create = " create table " + txt_tabelaTarget.Text + "( ";
+           
+            foreach (DataColumn c in data.Columns)
             {
-                informacao += r[1].ToString();
+                string tipo;
+                 if (c.DataType.ToString() == "System.String")
+                { 
+                   
+                    tipo= SqlHelper.GetDbType(c.DataType).ToString() + "(max)"; 
+                }
+                else 
+                {
+                    tipo=SqlHelper.GetDbType(c.DataType).ToString(); 
+                } 
+                create += c.ColumnName + " " + tipo + "," ;
+
+              
+
+                
             }
-            MessageBox.Show(informacao);
+
+            create = create.Substring(0, create.Length - 1) + ")";
+            MessageBox.Show(create);
 
 
 
