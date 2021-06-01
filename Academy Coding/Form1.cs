@@ -119,7 +119,7 @@ namespace Academy_Coding
             }
 
             conexaosource.SqlConnection.Open();
-            //conexaoTarget.SqlConnection.Open();
+            conexaoTarget.SqlConnection.Open();
 
             String consulta = "select * from "+ tabela;
 
@@ -127,6 +127,10 @@ namespace Academy_Coding
             SqlDataReader reader = sqlCommand.ExecuteReader();
             DataTable data = new DataTable();
             data.Load(reader);
+
+            SqlBulkCopy insert = new SqlBulkCopy(conexaoTarget.SqlConnection);
+
+
 
             string create = " create table " + txt_tabelaTarget.Text + "( ";
            
@@ -141,18 +145,30 @@ namespace Academy_Coding
                 else 
                 {
                     tipo=SqlHelper.GetDbType(c.DataType).ToString(); 
-                } 
-                create += c.ColumnName + " " + tipo + "," ;
+                }
 
-              
+                create += c.ColumnName + " " + tipo + ",";
+                insert.ColumnMappings.Add(c.ColumnName, c.ColumnName);
 
-                
+
             }
-
+                
             create = create.Substring(0, create.Length - 1) + ")";
-            MessageBox.Show(create);
+           // MessageBox.Show(create);
+                
+            SqlCommand command = new SqlCommand(create, conexaoTarget.SqlConnection ) ;
+            try
+            { 
+            command.ExecuteNonQuery();
+            insert.DestinationTableName = txt_tabelaTarget.Text;
+            insert.WriteToServer(data);
 
-
+            MessageBox.Show("Ok");
+            }
+           catch(SqlException erro)
+            {
+              MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
+            }
 
         }
             
