@@ -83,7 +83,7 @@ namespace Academy_Coding
         {
             string servidor = txt_servidorSource.Text;
                 
-            string dataBase = txt_dataBaseSouce.Text;
+            string dataBase = txt_dataBaseSource.Text;
 
             string usuario = txt_usuarioSource.Text;
             string senha = txt_senhaSource.Text;
@@ -168,7 +168,45 @@ namespace Academy_Coding
            catch(SqlException erro)
             {
               MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
+                gerais g = new gerais();
+                
+                if (g.campoVazio(txt_servidorSource, "Servidor Source"))
+                    return;
+
+                if (g.campoVazio(txt_dataBaseSource, "DataBase Source"))
+                    return;
+
+                if (g.campoVazio(txt_tabelaSource, "Tabela Source"))
+                    return;
+
+                if (g.campoVazio(txt_usuarioSource, "Usuario Source"))
+                    return;
+
+
+                if (g.campoVazio(txt_senhaTarget, "Senha Target"))
+                    return;
+                if (g.campoVazio(txt_servidorTarget, "Servidor Target"))
+                    return;
+
+                if (g.campoVazio(txt_dataBaseTarget, "DataBase Target"))
+                    return;
+
+                if (g.campoVazio(txt_tabelaTarget, "Tabela Target"))
+                    return;
+
+                if (g.campoVazio(txt_usuarioTarget, "Usuario Target"))
+                    return;
+
+                if (g.campoVazio(txt_senhaTarget, "Senha Target"))
+                    return;
+
+
+               
+
+
             }
+           
+           
 
         }
             

@@ -47,7 +47,7 @@ namespace Academy_Coding
             this.lb_servidor_Source = new System.Windows.Forms.Label();
             this.lb_servidor_Target = new System.Windows.Forms.Label();
             this.txt_servidorSource = new System.Windows.Forms.TextBox();
-            this.txt_dataBaseSouce = new System.Windows.Forms.TextBox();
+            this.txt_dataBaseSource = new System.Windows.Forms.TextBox();
             this.txt_tabelaSource = new System.Windows.Forms.TextBox();
             this.txt_usuarioSource = new System.Windows.Forms.TextBox();
             this.txt_senhaSource = new System.Windows.Forms.TextBox();
@@ -214,13 +214,13 @@ namespace Academy_Coding
             this.txt_servidorSource.TabIndex = 15;
             this.txt_servidorSource.Text = ".\\SQLEXPRESS";
             // 
-            // txt_dataBaseSouce
+            // txt_dataBaseSource
             // 
-            this.txt_dataBaseSouce.Location = new System.Drawing.Point(170, 126);
-            this.txt_dataBaseSouce.Name = "txt_dataBaseSouce";
-            this.txt_dataBaseSouce.Size = new System.Drawing.Size(132, 23);
-            this.txt_dataBaseSouce.TabIndex = 16;
-            this.txt_dataBaseSouce.Text = "Artistas";
+            this.txt_dataBaseSource.Location = new System.Drawing.Point(170, 126);
+            this.txt_dataBaseSource.Name = "txt_dataBaseSource";
+            this.txt_dataBaseSource.Size = new System.Drawing.Size(132, 23);
+            this.txt_dataBaseSource.TabIndex = 16;
+            this.txt_dataBaseSource.Text = "Artistas";
             // 
             // txt_tabelaSource
             // 
@@ -301,7 +301,7 @@ namespace Academy_Coding
             this.Controls.Add(this.txt_senhaSource);
             this.Controls.Add(this.txt_usuarioSource);
             this.Controls.Add(this.txt_tabelaSource);
-            this.Controls.Add(this.txt_dataBaseSouce);
+            this.Controls.Add(this.txt_dataBaseSource);
             this.Controls.Add(this.txt_servidorSource);
             this.Controls.Add(this.lb_servidor_Target);
             this.Controls.Add(this.lb_servidor_Source);
@@ -344,7 +344,7 @@ namespace Academy_Coding
         private System.Windows.Forms.Label lb_servidor_Source;
         private System.Windows.Forms.Label lb_servidor_Target;
         private System.Windows.Forms.TextBox txt_servidorSource;
-        private System.Windows.Forms.TextBox txt_dataBaseSouce;
+        private System.Windows.Forms.TextBox txt_dataBaseSource;
         private System.Windows.Forms.TextBox txt_tabelaSource;
         private System.Windows.Forms.TextBox txt_usuarioSource;
         private System.Windows.Forms.TextBox txt_senhaSource;
