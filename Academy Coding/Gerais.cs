@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace AcademyCoding
 {
-public  class IGerais
+public  class Gerais
     {
         public bool CampoVazio(Control control, string campo)
         {

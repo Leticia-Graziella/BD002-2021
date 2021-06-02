@@ -10,8 +10,8 @@ namespace AcademyCoding
 {
     class Conexao
     {
-        public SqlConnection SqlConnection;
-        public string _connectionString;
+        public SqlConnection sqlConnection;
+        public string connectionString;
         public Conexao() { }
 
         public void Connection(string servidor, string dataBase)
@@ -21,8 +21,8 @@ namespace AcademyCoding
             builder["trusted_connection"] = true;     
             builder["Initial Catalog"] = dataBase;
     
-            this.SqlConnection = new SqlConnection(builder.ConnectionString);
-            this._connectionString = builder.ConnectionString;
+            this.sqlConnection = new SqlConnection(builder.ConnectionString);
+            this.connectionString = builder.ConnectionString;
             
          }
         public void Connection(string servidor, string dataBase, string senha, string usuario)
@@ -34,8 +34,8 @@ namespace AcademyCoding
             builder["User id"] = usuario;
             builder["password"] = senha;
             
-            this.SqlConnection = new SqlConnection(builder.ConnectionString);
-            this._connectionString = builder.ConnectionString;
+            this.sqlConnection = new SqlConnection(builder.ConnectionString);
+            this.connectionString = builder.ConnectionString;
             
           
            

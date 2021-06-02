@@ -3,7 +3,7 @@ using System;
 
 namespace AcademyCoding
 {
-    partial class Form1
+    partial class ITelaInicial
     {
         /// <summary>
         ///  Required designer variable.

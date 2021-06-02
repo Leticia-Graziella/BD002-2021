@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace AcademyCoding
 {
-    public partial class Form1 : Form
+    public partial class ITelaInicial : Form
     {
-        public Form1()
+        public ITelaInicial()
         {
             InitializeComponent();
         }
@@ -74,7 +74,7 @@ namespace AcademyCoding
        
         private void btn_start_Click(object sender, EventArgs e)
         {
-            IGerais g = new IGerais();
+            Gerais g = new Gerais();
 
             if (g.CampoVazio(txt_servidorSource, "Servidor Source"))
                 return;
@@ -106,18 +106,9 @@ namespace AcademyCoding
             if (g.CampoVazio(txt_senhaTarget, "Senha Target"))
                 return;
 
-
-            string  servidor = txt_servidorSource.Text;
-                
-            string  dataBase = txt_dataBaseSource.Text;
-
-            string  usuario = txt_usuarioSource.Text;
-            string  senha = txt_senhaSource.Text;
-
-            string tabela = txt_tabelaSource.Text;
-
             Conexao conexaoTarget = new Conexao();
             Conexao conexaosource = new Conexao();
+            conexaosource = conexaoTarget;
             if (cb_autentificacaoSource.Checked)
             {
                
@@ -128,7 +119,7 @@ namespace AcademyCoding
             }
             else {
 
-                conexaosource.Connection(servidor, dataBase,usuario,senha);
+                conexaosource.Connection(txt_servidorSource.Text, txt_dataBaseSource.Text, txt_usuarioSource.Text,txt_senhaSource.Text);
             }
             if (cb_autentificacaoTarget.Checked)
             {
@@ -144,17 +135,17 @@ namespace AcademyCoding
                 conexaoTarget.Connection(txt_servidorTarget.Text, txt_dataBaseTarget.Text, txt_usuarioTarget.Text, txt_senhaTarget.Text);
             }
 
-            conexaosource.SqlConnection.Open();
-            conexaoTarget.SqlConnection.Open();
+            conexaosource.sqlConnection.Open();
+            conexaoTarget.sqlConnection.Open();
 
-            String consulta = "select * from "+ tabela;
+            String consulta = "select * from "+ txt_servidorSource;
 
-            SqlCommand sqlCommand = new SqlCommand(consulta, conexaosource.SqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(consulta, conexaosource.sqlConnection);
             SqlDataReader reader = sqlCommand.ExecuteReader();
             DataTable data = new DataTable();
             data.Load(reader);
 
-            SqlBulkCopy insert = new SqlBulkCopy(conexaoTarget.SqlConnection);
+            SqlBulkCopy insert = new SqlBulkCopy(conexaoTarget.sqlConnection);
 
 
 
@@ -162,18 +153,18 @@ namespace AcademyCoding
            
             foreach (DataColumn c in data.Columns)
             {
-                string _tipo;
+                string tipo;
                  if (c.DataType.ToString() == "System.String")
                 { 
                    
-                    _tipo= SqlHelper.GetDbType(c.DataType).ToString() + "(max)"; 
+                    tipo= SqlHelper.GetDbType(c.DataType).ToString() + "(max)"; 
                 }
                 else 
                 {
-                    _tipo=SqlHelper.GetDbType(c.DataType).ToString(); 
+                    tipo=SqlHelper.GetDbType(c.DataType).ToString(); 
                 }
 
-                create += c.ColumnName + " " + _tipo + ",";
+                create += c.ColumnName + " " + tipo + ",";
                 insert.ColumnMappings.Add(c.ColumnName, c.ColumnName);
 
 
@@ -182,7 +173,7 @@ namespace AcademyCoding
             create = create.Substring(0, create.Length - 1) + ")";
            // MessageBox.Show(create);
                 
-            SqlCommand command = new SqlCommand(create, conexaoTarget.SqlConnection ) ;
+            SqlCommand command = new SqlCommand(create, conexaoTarget.sqlConnection ) ;
             try
             { 
             command.ExecuteNonQuery();
