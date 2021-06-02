@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Academy_Coding
+namespace AcademyCoding
 {
-public  class gerais
+public  class IGerais
     {
-        public bool campoVazio(Control control, string campo)
+        public bool CampoVazio(Control control, string campo)
         {
             if(control.Text == "" || control.Text =="inválido")
             {

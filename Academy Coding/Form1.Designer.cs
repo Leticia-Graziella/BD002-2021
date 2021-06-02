@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Academy_Coding
+namespace AcademyCoding
 {
     partial class Form1
     {

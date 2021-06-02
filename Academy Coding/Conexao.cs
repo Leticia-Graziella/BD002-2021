@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Academy_Coding
+namespace AcademyCoding
 {
     class Conexao
     {
         public SqlConnection SqlConnection;
-        public string connectionString;
+        public string _connectionString;
         public Conexao() { }
 
         public void Connection(string servidor, string dataBase)
@@ -22,7 +22,7 @@ namespace Academy_Coding
             builder["Initial Catalog"] = dataBase;
     
             this.SqlConnection = new SqlConnection(builder.ConnectionString);
-            this.connectionString = builder.ConnectionString;
+            this._connectionString = builder.ConnectionString;
             
          }
         public void Connection(string servidor, string dataBase, string senha, string usuario)
@@ -35,7 +35,7 @@ namespace Academy_Coding
             builder["password"] = senha;
             
             this.SqlConnection = new SqlConnection(builder.ConnectionString);
-            this.connectionString = builder.ConnectionString;
+            this._connectionString = builder.ConnectionString;
             
           
            

@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
-namespace Academy_Coding
+namespace AcademyCoding
 {
     public partial class Form1 : Form
     {
@@ -81,23 +74,56 @@ namespace Academy_Coding
        
         private void btn_start_Click(object sender, EventArgs e)
         {
-            string servidor = txt_servidorSource.Text;
-                
-            string dataBase = txt_dataBaseSource.Text;
+            IGerais g = new IGerais();
 
-            string usuario = txt_usuarioSource.Text;
-            string senha = txt_senhaSource.Text;
+            if (g.CampoVazio(txt_servidorSource, "Servidor Source"))
+                return;
+
+            if (g.CampoVazio(txt_dataBaseSource, "DataBase Source"))
+                return;
+
+            if (g.CampoVazio(txt_tabelaSource, "Tabela Source"))
+                return;
+
+            if (g.CampoVazio(txt_usuarioSource, "Usuario Source"))
+                return;
+
+
+            if (g.CampoVazio(txt_senhaTarget, "Senha Target"))
+                return;
+            if (g.CampoVazio(txt_servidorTarget, "Servidor Target"))
+                return;
+
+            if (g.CampoVazio(txt_dataBaseTarget, "DataBase Target"))
+                return;
+
+            if (g.CampoVazio(txt_tabelaTarget, "Tabela Target"))
+                return;
+
+            if (g.CampoVazio(txt_usuarioTarget, "Usuario Target"))
+                return;
+
+            if (g.CampoVazio(txt_senhaTarget, "Senha Target"))
+                return;
+
+
+            string  servidor = txt_servidorSource.Text;
+                
+            string  dataBase = txt_dataBaseSource.Text;
+
+            string  usuario = txt_usuarioSource.Text;
+            string  senha = txt_senhaSource.Text;
 
             string tabela = txt_tabelaSource.Text;
 
             Conexao conexaoTarget = new Conexao();
-             Conexao conexaosource = new Conexao();
+            Conexao conexaosource = new Conexao();
             if (cb_autentificacaoSource.Checked)
             {
                
 
 
-                conexaosource.Connection(servidor,  dataBase);
+                conexaosource.Connection(txt_servidorSource.Text,  txt_dataBaseSource.Text);
                 
             }
             else {
@@ -136,18 +162,18 @@ namespace Academy_Coding
            
             foreach (DataColumn c in data.Columns)
             {
-                string tipo;
+                string _tipo;
                  if (c.DataType.ToString() == "System.String")
                 { 
                    
-                    tipo= SqlHelper.GetDbType(c.DataType).ToString() + "(max)"; 
+                    _tipo= SqlHelper.GetDbType(c.DataType).ToString() + "(max)"; 
                 }
                 else 
                 {
-                    tipo=SqlHelper.GetDbType(c.DataType).ToString(); 
+                    _tipo=SqlHelper.GetDbType(c.DataType).ToString(); 
                 }
 
-                create += c.ColumnName + " " + tipo + ",";
+                create += c.ColumnName + " " + _tipo + ",";
                 insert.ColumnMappings.Add(c.ColumnName, c.ColumnName);
 
 
@@ -168,41 +194,7 @@ namespace Academy_Coding
            catch(SqlException erro)
             {
               MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
-                gerais g = new gerais();
-                
-                if (g.campoVazio(txt_servidorSource, "Servidor Source"))
-                    return;
-
-                if (g.campoVazio(txt_dataBaseSource, "DataBase Source"))
-                    return;
-
-                if (g.campoVazio(txt_tabelaSource, "Tabela Source"))
-                    return;
-
-                if (g.campoVazio(txt_usuarioSource, "Usuario Source"))
-                    return;
-
-
-                if (g.campoVazio(txt_senhaTarget, "Senha Target"))
-                    return;
-                if (g.campoVazio(txt_servidorTarget, "Servidor Target"))
-                    return;
-
-                if (g.campoVazio(txt_dataBaseTarget, "DataBase Target"))
-                    return;
-
-                if (g.campoVazio(txt_tabelaTarget, "Tabela Target"))
-                    return;
-
-                if (g.campoVazio(txt_usuarioTarget, "Usuario Target"))
-                    return;
-
-                if (g.campoVazio(txt_senhaTarget, "Senha Target"))
-                    return;
-
-
                
-
 
             }
            

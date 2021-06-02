@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 
-namespace Academy_Coding
+namespace AcademyCoding
 {
     public static class SqlHelper
     {
