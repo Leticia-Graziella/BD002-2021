@@ -237,7 +237,6 @@ namespace AcademyCoding
             this.txt_usuarioSource.Name = "txt_usuarioSource";
             this.txt_usuarioSource.Size = new System.Drawing.Size(132, 23);
             this.txt_usuarioSource.TabIndex = 18;
-            this.txt_usuarioSource.TextChanged += new System.EventHandler(this.txt_usuarioSource_TextChanged);
             // 
             // txt_senhaSource
             // 
@@ -246,7 +245,6 @@ namespace AcademyCoding
             this.txt_senhaSource.Name = "txt_senhaSource";
             this.txt_senhaSource.Size = new System.Drawing.Size(132, 23);
             this.txt_senhaSource.TabIndex = 19;
-            this.txt_senhaSource.TextChanged += new System.EventHandler(this.txt_senhaSource_TextChanged);
             // 
             // txt_servidorTarget
             // 

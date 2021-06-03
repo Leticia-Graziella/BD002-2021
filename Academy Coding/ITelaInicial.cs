@@ -12,41 +12,33 @@ namespace AcademyCoding
         {
             InitializeComponent();
         }
-       
-        private void txt_usuarioSource_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void  txt_senhaSource_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void cb_autentificacaoSource_Click_1(object sender, EventArgs e)
         {
             if (cb_autentificacaoSource.Checked)
             {
                 txt_usuarioSource.Enabled = false;
-            ;
+                ;
             }
             else
                 txt_usuarioSource.Enabled = true;
-              
-           
+
+
             if (cb_autentificacaoSource.Checked)
             {
-             ;
+                ;
                 txt_senhaSource.Enabled = false;
             }
             else
-               
-            txt_senhaSource.Enabled = true;
+
+                txt_senhaSource.Enabled = true;
 
 
-        }  
+        }
         private void Form1_Load_1(object sender, EventArgs e)
         {
             cb_autentificacaoSource.Enabled = true;
-                      
+
         }
 
         private void cb_autentificacaoTarget_Click(object sender, EventArgs e)
@@ -57,21 +49,22 @@ namespace AcademyCoding
 
             }
             else
+            {
                 txt_usuarioTarget.Enabled = true;
-
+            }
 
             if (cb_autentificacaoTarget.Checked)
             {
-                
-               txt_senhaTarget.Enabled = false;
+
+                txt_senhaTarget.Enabled = false;
             }
             else
-
+            {
                 txt_senhaTarget.Enabled = true;
-
+            }
 
         }
-       
+
         private void btn_start_Click(object sender, EventArgs e)
         {
             Gerais g = new Gerais();
@@ -84,13 +77,16 @@ namespace AcademyCoding
 
             if (g.CampoVazio(txt_tabelaSource, "Tabela Source"))
                 return;
+            if (!(cb_autentificacaoTarget.Checked))
+            {
+                if (g.CampoVazio(txt_usuarioSource, "Usuario Source"))
+                    return;
+                if (g.CampoVazio(txt_senhaSource, "Senha Source"))
+                    return;
+            }
 
-            if (g.CampoVazio(txt_usuarioSource, "Usuario Source"))
-                return;
 
 
-            if (g.CampoVazio(txt_senhaTarget, "Senha Target"))
-                return;
             if (g.CampoVazio(txt_servidorTarget, "Servidor Target"))
                 return;
 
@@ -99,105 +95,92 @@ namespace AcademyCoding
 
             if (g.CampoVazio(txt_tabelaTarget, "Tabela Target"))
                 return;
+            if (!(cb_autentificacaoTarget.Checked))
+            {
+                if (g.CampoVazio(txt_usuarioTarget, "Usuario Target"))
+                    return;
 
-            if (g.CampoVazio(txt_usuarioTarget, "Usuario Target"))
-                return;
+                if (g.CampoVazio(txt_senhaTarget, "Senha Target"))
+                    return;
+            }
 
-            if (g.CampoVazio(txt_senhaTarget, "Senha Target"))
-                return;
 
             Conexao conexaoTarget = new Conexao();
-            Conexao conexaosource = new Conexao();
-            conexaosource = conexaoTarget;
+            Conexao conexaoSource = new Conexao();
+            conexaoSource = conexaoTarget;
             if (cb_autentificacaoSource.Checked)
             {
-               
-
-
-                conexaosource.Connection(txt_servidorSource.Text,  txt_dataBaseSource.Text);
-                
-            }
-            else {
-
-                conexaosource.Connection(txt_servidorSource.Text, txt_dataBaseSource.Text, txt_usuarioSource.Text,txt_senhaSource.Text);
-            }
-            if (cb_autentificacaoTarget.Checked)
-            {
-
-
-
-                conexaoTarget.Connection(txt_servidorTarget.Text , txt_dataBaseTarget.Text);
-
+                conexaoSource.Connection(txt_servidorSource.Text, txt_dataBaseSource.Text);
             }
             else
             {
+                conexaoSource.Connection(txt_servidorSource.Text, txt_dataBaseSource.Text, txt_usuarioSource.Text, txt_senhaSource.Text);
+            }
 
+            if (cb_autentificacaoTarget.Checked)
+            {
+                conexaoTarget.Connection(txt_servidorTarget.Text, txt_dataBaseTarget.Text);
+            }
+            else
+            {
                 conexaoTarget.Connection(txt_servidorTarget.Text, txt_dataBaseTarget.Text, txt_usuarioTarget.Text, txt_senhaTarget.Text);
             }
 
-            conexaosource.sqlConnection.Open();
-            conexaoTarget.sqlConnection.Open();
-
-            String consulta = "select * from "+ txt_servidorSource;
-
-            SqlCommand sqlCommand = new SqlCommand(consulta, conexaosource.sqlConnection);
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-            DataTable data = new DataTable();
-            data.Load(reader);
-
-            SqlBulkCopy insert = new SqlBulkCopy(conexaoTarget.sqlConnection);
-
-
-
-            string create = " create table " + txt_tabelaTarget.Text + "( ";
-           
-            foreach (DataColumn c in data.Columns)
-            {
-                string tipo;
-                 if (c.DataType.ToString() == "System.String")
-                { 
-                   
-                    tipo= SqlHelper.GetDbType(c.DataType).ToString() + "(max)"; 
-                }
-                else 
-                {
-                    tipo=SqlHelper.GetDbType(c.DataType).ToString(); 
-                }
-
-                create += c.ColumnName + " " + tipo + ",";
-                insert.ColumnMappings.Add(c.ColumnName, c.ColumnName);
-
-
-            }
-                
-            create = create.Substring(0, create.Length - 1) + ")";
-           // MessageBox.Show(create);
-                
-            SqlCommand command = new SqlCommand(create, conexaoTarget.sqlConnection ) ;
             try
-            { 
-            command.ExecuteNonQuery();
-            insert.DestinationTableName = txt_tabelaTarget.Text;
-            insert.WriteToServer(data);
-
-            MessageBox.Show("Ok");
-            }
-           catch(SqlException erro)
             {
-              MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
-               
+                conexaoSource.sqlConnection.Open();
+                conexaoTarget.sqlConnection.Open();
 
+                String consulta = "select * from " + txt_servidorSource;
+
+                SqlCommand sqlCommand = new SqlCommand(consulta, conexaoSource.sqlConnection);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                DataTable data = new DataTable();
+                data.Load(reader);
+
+                SqlBulkCopy insert = new SqlBulkCopy(conexaoTarget.sqlConnection);
+
+                string create = " create table " + txt_tabelaTarget.Text + "( ";
+
+                foreach (DataColumn c in data.Columns)
+                {
+                    string tipo;
+                    if (c.DataType.ToString() == "System.String")
+                    {
+                        tipo = SqlHelper.GetDbType(c.DataType).ToString() + "(max)";
+                    }
+                    else
+                    {
+                        tipo = SqlHelper.GetDbType(c.DataType).ToString();
+                    }
+
+                    create += c.ColumnName + " " + tipo + ",";
+                    insert.ColumnMappings.Add(c.ColumnName, c.ColumnName);
+
+                }
+
+                create = create.Substring(0, create.Length - 1) + ")";
+
+                SqlCommand command = new SqlCommand(create, conexaoTarget.sqlConnection);
+
+                command.ExecuteNonQuery();
+                insert.DestinationTableName = txt_tabelaTarget.Text;
+                insert.WriteToServer(data);
+
+                insert.Close();
+                reader.Close();
+                conexaoSource.sqlConnection.Close();
+                conexaoTarget.sqlConnection.Close();
+                MessageBox.Show("Tabela " +txt_tabelaTarget +" salva com sucesso!!");
             }
-           
-           
-
+            catch (SqlException erro)
+            {
+                MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
+            }
         }
-            
-                   
     }
 
 
-        
 
-    }
+}
 

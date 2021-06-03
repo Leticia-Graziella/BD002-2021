@@ -18,13 +18,13 @@ namespace AcademyCoding
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder["server"] = servidor;
-            builder["trusted_connection"] = true;     
+            builder["trusted_connection"] = true;
             builder["Initial Catalog"] = dataBase;
-    
+
             this.sqlConnection = new SqlConnection(builder.ConnectionString);
             this.connectionString = builder.ConnectionString;
-            
-         }
+
+        }
         public void Connection(string servidor, string dataBase, string senha, string usuario)
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -33,12 +33,10 @@ namespace AcademyCoding
             builder["Initial Catalog"] = dataBase;
             builder["User id"] = usuario;
             builder["password"] = senha;
-            
+
             this.sqlConnection = new SqlConnection(builder.ConnectionString);
             this.connectionString = builder.ConnectionString;
-            
-          
-           
+
         }
 
     }

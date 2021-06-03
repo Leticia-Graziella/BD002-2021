@@ -5,17 +5,18 @@ using System.Windows.Forms;
 
 namespace AcademyCoding
 {
-public  class Gerais
+    public class Gerais
     {
         public bool CampoVazio(Control control, string campo)
         {
-            if(control.Text == "" || control.Text =="inválido")
+            if (control.Text == "")
             {
-                MessageBox.Show("É necessario o preenchimento do campo "+campo);
+                MessageBox.Show("É necessario o preenchimento do campo " + campo);
                 control.Focus();
                 return true;
             }
-            else {
+            else
+            {
                 return false;
             }
         }

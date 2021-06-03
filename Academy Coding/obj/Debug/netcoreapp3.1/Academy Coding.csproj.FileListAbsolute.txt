@@ -5,7 +5,6 @@ C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.dll
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\Academy Coding.pdb
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.csprojAssemblyReference.cache
-C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy_Coding.Form1.resources
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.csproj.GenerateResource.cache
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.AssemblyInfoInputs.cache
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy Coding.AssemblyInfo.cs
@@ -23,3 +22,4 @@ C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\bin\Debug\netcoreapp3.1\EntityFramework.dll
 C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\Academy_Coding..resources
+C:\Users\Alicia\source\repos\Academy Coding\Academy Coding\obj\Debug\netcoreapp3.1\AcademyCoding.ITelaInicial.resources

@@ -8,8 +8,6 @@ namespace AcademyCoding
     public static class SqlHelper
     {
         private static Dictionary<Type, SqlDbType> _typeMap;
-
-        // Create and populate the dictionary in the static constructor
         static SqlHelper()
         {
             _typeMap = new Dictionary<Type, SqlDbType>();
@@ -28,13 +26,10 @@ namespace AcademyCoding
             _typeMap[typeof(float)] = SqlDbType.Real;
             _typeMap[typeof(double)] = SqlDbType.Float;
             _typeMap[typeof(TimeSpan)] = SqlDbType.Time;
-            /* ... and so on ... */
-        }
 
-        // Non-generic argument-based method
+        }
         public static SqlDbType GetDbType(Type giveType)
         {
-            // Allow nullable types to be handled
             giveType = Nullable.GetUnderlyingType(giveType) ?? giveType;
 
             if (_typeMap.ContainsKey(giveType))
@@ -44,7 +39,5 @@ namespace AcademyCoding
 
             throw new ArgumentException($"{giveType.FullName} is not a supported .NET class");
         }
-
-        
     }
 }
