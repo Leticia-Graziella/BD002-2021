@@ -18,22 +18,26 @@ namespace AcademyCoding
             if (cb_autentificacaoSource.Checked)
             {
                 txt_usuarioSource.Enabled = false;
-                ;
+                lb_usuarioSource.Enabled = false;
             }
-            else
+            else 
+            {
                 txt_usuarioSource.Enabled = true;
-
+                lb_usuarioSource.Enabled = true;
+            }
 
             if (cb_autentificacaoSource.Checked)
             {
-                ;
+                
                 txt_senhaSource.Enabled = false;
+                lb_senhaSource.Enabled = false;
             }
             else
-
+            {
                 txt_senhaSource.Enabled = true;
-
-
+                lb_senhaSource.Enabled = true;
+            }
+                
         }
         private void Form1_Load_1(object sender, EventArgs e)
         {
@@ -46,21 +50,25 @@ namespace AcademyCoding
             if (cb_autentificacaoTarget.Checked)
             {
                 txt_usuarioTarget.Enabled = false;
-
+                lb_usuarioTarget.Enabled = false;
             }
             else
             {
                 txt_usuarioTarget.Enabled = true;
+                lb_usuarioTarget.Enabled = true;
+
             }
 
             if (cb_autentificacaoTarget.Checked)
             {
 
                 txt_senhaTarget.Enabled = false;
+                lb_senhaTarget.Enabled = false;
             }
             else
             {
                 txt_senhaTarget.Enabled = true;
+                lb_senhaTarget.Enabled = true;
             }
 
         }
@@ -107,7 +115,7 @@ namespace AcademyCoding
 
             Conexao conexaoTarget = new Conexao();
             Conexao conexaoSource = new Conexao();
-          
+
             if (cb_autentificacaoSource.Checked)
             {
                 conexaoSource.Connection(txt_servidorSource.Text, txt_dataBaseSource.Text);
@@ -126,12 +134,12 @@ namespace AcademyCoding
                 conexaoTarget.Connection(txt_servidorTarget.Text, txt_dataBaseTarget.Text, txt_usuarioTarget.Text, txt_senhaTarget.Text);
             }
 
-          //  try
-          //  {
+            try
+            {
                 conexaoSource.sqlConnection.Open();
                 conexaoTarget.sqlConnection.Open();
 
-                String consulta = "select * from " + txt_servidorSource.Text;
+                String consulta = "select * from " + txt_tabelaSource.Text;
 
                 SqlCommand sqlCommand = new SqlCommand(consulta, conexaoSource.sqlConnection);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
@@ -171,16 +179,13 @@ namespace AcademyCoding
                 reader.Close();
                 conexaoSource.sqlConnection.Close();
                 conexaoTarget.sqlConnection.Close();
-                MessageBox.Show("Tabela " +txt_tabelaTarget.Text +" salva com sucesso!!");
-           //}
-           // catch (SqlException erro)
-           //{
-               // MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
-           // }
-        }
+                MessageBox.Show("Tabela " +"'" + txt_tabelaTarget.Text+ "'" + " salva com sucesso!!");
+                }
+                 catch (SqlException erro)
+                {
+                 MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
+                 }
+            }
     }
-
-
-
-}
+  }
 
