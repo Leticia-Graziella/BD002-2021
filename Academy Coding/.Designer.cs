@@ -71,8 +71,6 @@ namespace AcademyCoding
             // cb_autentificacaoTarget
             // 
             this.cb_autentificacaoTarget.AutoSize = true;
-            this.cb_autentificacaoTarget.Checked = true;
-            this.cb_autentificacaoTarget.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_autentificacaoTarget.Location = new System.Drawing.Point(524, 296);
             this.cb_autentificacaoTarget.Name = "cb_autentificacaoTarget";
             this.cb_autentificacaoTarget.Size = new System.Drawing.Size(179, 19);
@@ -84,8 +82,6 @@ namespace AcademyCoding
             // cb_autentificacaoSource
             // 
             this.cb_autentificacaoSource.AutoSize = true;
-            this.cb_autentificacaoSource.Checked = true;
-            this.cb_autentificacaoSource.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_autentificacaoSource.Location = new System.Drawing.Point(146, 296);
             this.cb_autentificacaoSource.Name = "cb_autentificacaoSource";
             this.cb_autentificacaoSource.Size = new System.Drawing.Size(179, 19);
@@ -124,7 +120,6 @@ namespace AcademyCoding
             // lb_usuarioSource
             // 
             this.lb_usuarioSource.AutoSize = true;
-            this.lb_usuarioSource.Enabled = false;
             this.lb_usuarioSource.Location = new System.Drawing.Point(117, 210);
             this.lb_usuarioSource.Name = "lb_usuarioSource";
             this.lb_usuarioSource.Size = new System.Drawing.Size(47, 15);
@@ -134,7 +129,6 @@ namespace AcademyCoding
             // lb_senhaSource
             // 
             this.lb_senhaSource.AutoSize = true;
-            this.lb_senhaSource.Enabled = false;
             this.lb_senhaSource.Location = new System.Drawing.Point(125, 252);
             this.lb_senhaSource.Name = "lb_senhaSource";
             this.lb_senhaSource.Size = new System.Drawing.Size(39, 15);
@@ -171,7 +165,6 @@ namespace AcademyCoding
             // lb_usuarioTarget
             // 
             this.lb_usuarioTarget.AutoSize = true;
-            this.lb_usuarioTarget.Enabled = false;
             this.lb_usuarioTarget.Location = new System.Drawing.Point(503, 210);
             this.lb_usuarioTarget.Name = "lb_usuarioTarget";
             this.lb_usuarioTarget.Size = new System.Drawing.Size(47, 15);
@@ -181,7 +174,6 @@ namespace AcademyCoding
             // lb_senhaTarget
             // 
             this.lb_senhaTarget.AutoSize = true;
-            this.lb_senhaTarget.Enabled = false;
             this.lb_senhaTarget.Location = new System.Drawing.Point(511, 252);
             this.lb_senhaTarget.Name = "lb_senhaTarget";
             this.lb_senhaTarget.Size = new System.Drawing.Size(39, 15);
@@ -212,7 +204,6 @@ namespace AcademyCoding
             this.txt_servidorSource.Name = "txt_servidorSource";
             this.txt_servidorSource.Size = new System.Drawing.Size(132, 23);
             this.txt_servidorSource.TabIndex = 15;
-            this.txt_servidorSource.Text = ".\\SQLEXPRESS";
             // 
             // txt_dataBaseSource
             // 
@@ -220,7 +211,6 @@ namespace AcademyCoding
             this.txt_dataBaseSource.Name = "txt_dataBaseSource";
             this.txt_dataBaseSource.Size = new System.Drawing.Size(132, 23);
             this.txt_dataBaseSource.TabIndex = 16;
-            this.txt_dataBaseSource.Text = "Artistas";
             // 
             // txt_tabelaSource
             // 
@@ -228,11 +218,9 @@ namespace AcademyCoding
             this.txt_tabelaSource.Name = "txt_tabelaSource";
             this.txt_tabelaSource.Size = new System.Drawing.Size(132, 23);
             this.txt_tabelaSource.TabIndex = 17;
-            this.txt_tabelaSource.Text = "Cantores_POP";
             // 
             // txt_usuarioSource
             // 
-            this.txt_usuarioSource.Enabled = false;
             this.txt_usuarioSource.Location = new System.Drawing.Point(170, 205);
             this.txt_usuarioSource.Name = "txt_usuarioSource";
             this.txt_usuarioSource.Size = new System.Drawing.Size(132, 23);
@@ -240,7 +228,6 @@ namespace AcademyCoding
             // 
             // txt_senhaSource
             // 
-            this.txt_senhaSource.Enabled = false;
             this.txt_senhaSource.Location = new System.Drawing.Point(170, 244);
             this.txt_senhaSource.Name = "txt_senhaSource";
             this.txt_senhaSource.Size = new System.Drawing.Size(132, 23);
@@ -252,7 +239,6 @@ namespace AcademyCoding
             this.txt_servidorTarget.Name = "txt_servidorTarget";
             this.txt_servidorTarget.Size = new System.Drawing.Size(147, 23);
             this.txt_servidorTarget.TabIndex = 20;
-            this.txt_servidorTarget.Text = ".\\SQLEXPRESS";
             // 
             // txt_dataBaseTarget
             // 
@@ -260,7 +246,6 @@ namespace AcademyCoding
             this.txt_dataBaseTarget.Name = "txt_dataBaseTarget";
             this.txt_dataBaseTarget.Size = new System.Drawing.Size(147, 23);
             this.txt_dataBaseTarget.TabIndex = 21;
-            this.txt_dataBaseTarget.Text = "Artistas";
             // 
             // txt_tabelaTarget
             // 
@@ -268,11 +253,9 @@ namespace AcademyCoding
             this.txt_tabelaTarget.Name = "txt_tabelaTarget";
             this.txt_tabelaTarget.Size = new System.Drawing.Size(147, 23);
             this.txt_tabelaTarget.TabIndex = 22;
-            this.txt_tabelaTarget.Text = "Cantore_POPBK";
             // 
             // txt_usuarioTarget
             // 
-            this.txt_usuarioTarget.Enabled = false;
             this.txt_usuarioTarget.Location = new System.Drawing.Point(556, 205);
             this.txt_usuarioTarget.Name = "txt_usuarioTarget";
             this.txt_usuarioTarget.Size = new System.Drawing.Size(147, 23);
@@ -280,13 +263,12 @@ namespace AcademyCoding
             // 
             // txt_senhaTarget
             // 
-            this.txt_senhaTarget.Enabled = false;
             this.txt_senhaTarget.Location = new System.Drawing.Point(556, 244);
             this.txt_senhaTarget.Name = "txt_senhaTarget";
             this.txt_senhaTarget.Size = new System.Drawing.Size(147, 23);
             this.txt_senhaTarget.TabIndex = 24;
             // 
-            // Form1
+            // ITelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,9 +298,8 @@ namespace AcademyCoding
             this.Controls.Add(this.cb_autentificacaoSource);
             this.Controls.Add(this.cb_autentificacaoTarget);
             this.Controls.Add(this.btn_start);
-            this.Name = "Form1";
+            this.Name = "ITelaInicial";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

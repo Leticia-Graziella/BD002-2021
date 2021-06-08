@@ -19,31 +19,18 @@ namespace AcademyCoding
             {
                 txt_usuarioSource.Enabled = false;
                 lb_usuarioSource.Enabled = false;
+                txt_senhaSource.Enabled = false;
+                lb_senhaSource.Enabled = false;
             }
             else 
             {
                 txt_usuarioSource.Enabled = true;
-                lb_usuarioSource.Enabled = true;
-            }
-
-            if (cb_autentificacaoSource.Checked)
-            {
-                
-                txt_senhaSource.Enabled = false;
-                lb_senhaSource.Enabled = false;
-            }
-            else
-            {
+                lb_usuarioSource.Enabled = true;         
                 txt_senhaSource.Enabled = true;
                 lb_senhaSource.Enabled = true;
             }
-                
         }
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            cb_autentificacaoSource.Enabled = true;
-
-        }
+       
 
         private void cb_autentificacaoTarget_Click(object sender, EventArgs e)
         {
@@ -51,26 +38,17 @@ namespace AcademyCoding
             {
                 txt_usuarioTarget.Enabled = false;
                 lb_usuarioTarget.Enabled = false;
+                txt_senhaTarget.Enabled = false;
+                lb_senhaTarget.Enabled = false;
+            
             }
             else
             {
                 txt_usuarioTarget.Enabled = true;
                 lb_usuarioTarget.Enabled = true;
-
-            }
-
-            if (cb_autentificacaoTarget.Checked)
-            {
-
-                txt_senhaTarget.Enabled = false;
-                lb_senhaTarget.Enabled = false;
-            }
-            else
-            {
                 txt_senhaTarget.Enabled = true;
                 lb_senhaTarget.Enabled = true;
             }
-
         }
 
         private void btn_start_Click(object sender, EventArgs e)
