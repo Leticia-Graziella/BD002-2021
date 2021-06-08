@@ -22,15 +22,15 @@ namespace AcademyCoding
                 txt_senhaSource.Enabled = false;
                 lb_senhaSource.Enabled = false;
             }
-            else 
+            else
             {
                 txt_usuarioSource.Enabled = true;
-                lb_usuarioSource.Enabled = true;         
+                lb_usuarioSource.Enabled = true;
                 txt_senhaSource.Enabled = true;
                 lb_senhaSource.Enabled = true;
             }
         }
-       
+
 
         private void cb_autentificacaoTarget_Click(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace AcademyCoding
                 lb_usuarioTarget.Enabled = false;
                 txt_senhaTarget.Enabled = false;
                 lb_senhaTarget.Enabled = false;
-            
+
             }
             else
             {
@@ -157,13 +157,13 @@ namespace AcademyCoding
                 reader.Close();
                 conexaoSource.sqlConnection.Close();
                 conexaoTarget.sqlConnection.Close();
-                MessageBox.Show("Tabela " +"'" + txt_tabelaTarget.Text+ "'" + " salva com sucesso!!");
-                }
-                 catch (SqlException erro)
-                {
-                 MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
-                 }
+                MessageBox.Show("Tabela " + "'" + txt_tabelaTarget.Text + "'" + " salva com sucesso!!");
             }
+            catch (SqlException erro)
+            {
+                MessageBox.Show("Ocorreu um erro!\n" + erro.Message);
+            }
+        }
     }
-  }
+}
 
